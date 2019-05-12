@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Cede_ASP_MVC_Events_Base.Models.Personal>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personal</h2>
+
+<p>
+    @Html.ActionLink("Crear Personal", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>
+        <th></th>
+    </tr>
+
+    @if (Model != null) {
+    foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.PersonalId }) |
+            @Html.ActionLink("Detalle", "Details", new { id = item.PersonalId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.PersonalId })
+        </td>
+    </tr>
+}
+    }
+
+</table>
