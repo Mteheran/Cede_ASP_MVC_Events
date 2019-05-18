@@ -1,0 +1,14 @@
+﻿@model List<Cede_ASP_MVC_Events_Main.wsPersonalService.PersonalDto>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <label>
+       @item.Name @item.LastName
+    </label>
+    <br/>
+}
+

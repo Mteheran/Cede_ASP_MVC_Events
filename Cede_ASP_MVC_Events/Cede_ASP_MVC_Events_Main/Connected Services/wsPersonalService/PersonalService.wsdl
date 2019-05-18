@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetPersonal">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPersonalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonalResult" type="tns:ArrayOfPersonalDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersonalDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PersonalDto" nillable="true" type="tns:PersonalDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PersonalDto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PersonalId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPersonalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonal" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PersonalServiceSoap">
+    <wsdl:operation name="GetPersonal">
+      <wsdl:input message="tns:GetPersonalSoapIn" />
+      <wsdl:output message="tns:GetPersonalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PersonalServiceSoap" type="tns:PersonalServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPersonal">
+      <soap:operation soapAction="http://tempuri.org/GetPersonal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PersonalServiceSoap12" type="tns:PersonalServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPersonal">
+      <soap12:operation soapAction="http://tempuri.org/GetPersonal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PersonalService">
+    <wsdl:port name="PersonalServiceSoap" binding="tns:PersonalServiceSoap">
+      <soap:address location="http://localhost:50836/PersonalService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PersonalServiceSoap12" binding="tns:PersonalServiceSoap12">
+      <soap12:address location="http://localhost:50836/PersonalService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
