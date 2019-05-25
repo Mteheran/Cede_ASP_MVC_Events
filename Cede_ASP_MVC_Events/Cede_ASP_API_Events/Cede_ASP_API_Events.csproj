@@ -165,27 +165,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonalController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Data\Event.cs">
-      <DependentUpon>EventterModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\EventterModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EventterModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\EventterModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EventterModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\EventterModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EventterModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Personal.cs">
-      <DependentUpon>EventterModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,16 +176,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Data\EventterModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EventterModel.Context.cs</LastGenOutput>
-      <DependentUpon>EventterModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Data\EventterModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EventterModel.edmx</DependentUpon>
-      <LastGenOutput>EventterModel.cs</LastGenOutput>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -231,13 +200,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Data\EventterModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EventterModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Data\EventterModel.edmx.diagram">
-      <DependentUpon>EventterModel.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -294,6 +256,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cede_ASP_API_Events_EF\Cede_ASP_API_Events_EF.csproj">
+      <Project>{17e0ba5a-e36a-47b9-b3d0-0c4e406877a8}</Project>
+      <Name>Cede_ASP_API_Events_EF</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

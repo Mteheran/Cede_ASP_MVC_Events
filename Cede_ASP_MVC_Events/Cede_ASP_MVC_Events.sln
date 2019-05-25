@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{4BF5D5F3-B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cede_ASP_API_Events", "Cede_ASP_API_Events\Cede_ASP_API_Events.csproj", "{8342F255-D41D-4951-B7D8-7035E4C7E17C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cede_ASP_API_Events_EF", "Cede_ASP_API_Events_EF\Cede_ASP_API_Events_EF.csproj", "{17E0BA5A-E36A-47B9-B3D0-0C4E406877A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{8342F255-D41D-4951-B7D8-7035E4C7E17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8342F255-D41D-4951-B7D8-7035E4C7E17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8342F255-D41D-4951-B7D8-7035E4C7E17C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17E0BA5A-E36A-47B9-B3D0-0C4E406877A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E0BA5A-E36A-47B9-B3D0-0C4E406877A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E0BA5A-E36A-47B9-B3D0-0C4E406877A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E0BA5A-E36A-47B9-B3D0-0C4E406877A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8D05B1A7-6FE4-4F38-9531-A65579825AA0} = {1032F4EE-9BE7-415A-B9C0-2A69C628D5D1}
 		{8342F255-D41D-4951-B7D8-7035E4C7E17C} = {4BF5D5F3-BF91-48D6-875B-1E5A33F26374}
+		{17E0BA5A-E36A-47B9-B3D0-0C4E406877A8} = {4BF5D5F3-BF91-48D6-875B-1E5A33F26374}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C8C24EF5-DAB4-480D-9E69-BDAF65C4F4A6}

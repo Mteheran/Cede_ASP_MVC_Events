@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Cede_ASP_API_Events.Data;
+using Cede_ASP_API_Events_EF.Context;
+using Cede_ASP_API_Events_EF.Entities;
 
 namespace Cede_ASP_API_Events.Controllers
 {
     public class PersonalController : ApiController
     {
-        private cnxEventter db = new cnxEventter();
+        private EventterContext db = new EventterContext();
 
         // GET: api/Personal
         public IQueryable<Personal> GetPersonal()
