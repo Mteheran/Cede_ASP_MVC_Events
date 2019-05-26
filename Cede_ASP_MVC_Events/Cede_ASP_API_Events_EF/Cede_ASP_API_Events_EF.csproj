@@ -54,11 +54,28 @@
     <Compile Include="Context\EventterContext.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Personal.cs" />
+    <Compile Include="Migrations\201905251407591_InitialCreate.cs" />
+    <Compile Include="Migrations\201905251407591_InitialCreate.Designer.cs">
+      <DependentUpon>201905251407591_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905251419017_Personal_Phone2_column.cs" />
+    <Compile Include="Migrations\201905251419017_Personal_Phone2_column.Designer.cs">
+      <DependentUpon>201905251419017_Personal_Phone2_column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905251407591_InitialCreate.resx">
+      <DependentUpon>201905251407591_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905251419017_Personal_Phone2_column.resx">
+      <DependentUpon>201905251419017_Personal_Phone2_column.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
