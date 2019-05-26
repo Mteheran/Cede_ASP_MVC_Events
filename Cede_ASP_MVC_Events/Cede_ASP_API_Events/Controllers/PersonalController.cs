@@ -42,7 +42,8 @@ namespace Cede_ASP_API_Events.Controllers
             var listexcept = listconcated.Except(listPersonalExtension);
 
             //ejecutar queries directos a la base de datos
-            
+            //db.Database.SqlQuery("EXECUTE SPMiguel ");
+
             //traer todas las personas que el Email sea nulo 
             // que el nombre contega i y que el apellido termine en n o en z 
 
