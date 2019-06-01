@@ -1,4 +1,5 @@
 ﻿using Cede_ASP_MVC_Events_Main.Models;
+using Cede_ASP_MVC_Events_Main.Services.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Web;
 
 namespace Cede_ASP_MVC_Events_Main.Services
 {
-    public class EventService : BaseService
+    public class EventService : BaseService, IEventService
     {
         public async Task<List<Event>> GetEvents()
         {

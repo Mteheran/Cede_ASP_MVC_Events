@@ -46,6 +46,8 @@ namespace Cede_ASP_MVC_Events_Main
             // container.RegisterType<IProductRepository, ProductRepository>();
 
             container.RegisterType<IPersonalService, PersonalService>();
+
+            container.RegisterType<IEventService, EventService>();
         }
     }
 }
