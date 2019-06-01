@@ -1,4 +1,4 @@
-﻿using Cede_ASP_MVC_Events_Main.Services;
+using Cede_ASP_MVC_Events_Main.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

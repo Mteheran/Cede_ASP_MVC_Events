@@ -196,6 +196,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Personal\Index.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\Events.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
