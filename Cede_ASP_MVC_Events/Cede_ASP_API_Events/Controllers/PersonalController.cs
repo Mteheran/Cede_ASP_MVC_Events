@@ -32,14 +32,19 @@ namespace Cede_ASP_API_Events.Controllers
                                       p.LastName.Contains("a")
                                select p;
 
-            var listPersonalExtension = db.Personal.Where(p => p.LastName.EndsWith("z"));
+            var listPersonalExtension = db.Personal
+                                        .Where(p => p.LastName.EndsWith("z"))
+                                        .Where(p => p.Phone == null)
+                                        .OrderBy(p => p.LastName);
+                                        
+                                        
 
             //var listconcated = Enumerable.Concat(listPersonal, listPersonalExtension);
-            var listconcated = listPersonal.Concat(listPersonalExtension);
+            //var listconcated = listPersonal.Concat(listPersonalExtension);
 
-            var listrepeted = Enumerable.Repeat<Personal>(new Personal() { PersonalId = Guid.NewGuid(), Name = "Persona Name", LastName = "Persona lastname" }, 10);
+            //var listrepeted = Enumerable.Repeat<Personal>(new Personal() { PersonalId = Guid.NewGuid(), Name = "Persona Name", LastName = "Persona lastname" }, 10);
 
-            var listexcept = listconcated.Except(listPersonalExtension);
+            //var listexcept = listconcated.Except(listPersonalExtension);
 
             //ejecutar queries directos a la base de datos
             //db.Database.SqlQuery("EXECUTE SPMiguel ");
@@ -47,7 +52,7 @@ namespace Cede_ASP_API_Events.Controllers
             //traer todas las personas que el Email sea nulo 
             // que el nombre contega i y que el apellido termine en n o en z 
 
-            return listexcept.ToList();
+            return listPersonalExtension.ToList();
         }
 
         // GET: api/Personal/5
