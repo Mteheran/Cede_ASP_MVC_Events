@@ -1,4 +1,5 @@
 using Cede_ASP_MVC_Events_Main.Services;
+using Cede_ASP_MVC_Events_Main.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace Cede_ASP_MVC_Events_Main.Controllers
 {
     public class EventController : Controller
     {
-        public EventService eventService { get; set; }
+        public IEventService eventService { get; set; }
 
-        public EventController()
+        public EventController(IEventService service)
         {
-            eventService = new EventService();
+            eventService = service;
         }
 
         // GET: Event

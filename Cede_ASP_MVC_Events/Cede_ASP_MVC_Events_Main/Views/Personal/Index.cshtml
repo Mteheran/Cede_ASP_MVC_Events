@@ -4,11 +4,56 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@foreach (var item in Model)
-{
-    <label>
-       @item.Name @item.LastName
-    </label>
-    <br/>
-}
+<p>
+    @Html.ActionLink("Crear Nuevo Personal", "Create")
+</p>
+
+<table class=" table">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Apellido
+        </th>
+        <th>
+            Telefono 1
+        </th>
+        <th>
+            Telefono 2
+        </th>
+        <th>
+            Correo
+        </th>
+        <th>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.PersonalId }) |
+                @*@Html.ActionLink("Details", "Details", new { id = item.Id_Empleado }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id_Empleado })*@
+            </td>
+        </tr>
+    }
+
+</table>
 

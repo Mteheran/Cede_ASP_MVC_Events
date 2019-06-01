@@ -44,6 +44,7 @@ namespace Cede_ASP_MVC_Events_Main
 
             // TODO: Register your type's mappings here.
             container.RegisterType<IPersonalService, PersonalService>();
+            container.RegisterType<IEventService, EventService>();
         }
     }
 }

@@ -31,5 +31,15 @@ namespace Cede_ASP_MVC_Events_Main.Services.WebServices
 
             return listToReturn;
         }
+
+        public async Task<Personal> GetPersonalbyId(string Id)
+        {
+            return new Personal();
+        }
+
+        public async Task<bool> SavePersonal(Personal personal)
+        {
+            return false;
+        }
     }
 }

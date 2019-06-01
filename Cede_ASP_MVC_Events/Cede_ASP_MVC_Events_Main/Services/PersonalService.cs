@@ -25,5 +25,34 @@ namespace Cede_ASP_MVC_Events_Main.Services
 
             return new List<Personal>();
         }
+
+        public async Task<Personal> GetPersonalbyId(string Id)
+        {
+            var result = await httpClient.GetAsync($"{ApiBase}/personal/{Id}");
+
+            if (result.IsSuccessStatusCode)
+            {
+                var parseResult = JsonConvert.DeserializeObject<Personal>(await result.Content.ReadAsStringAsync());
+
+                return parseResult;
+            }
+
+            return new Personal();
+        }
+
+        public async Task<bool> SavePersonal(Personal personal)
+        {
+            string bodyRequest = JsonConvert.SerializeObject(personal);
+
+            var content = new StringContent(bodyRequest, System.Text.Encoding.UTF8, "application/json");
+            HttpResponseMessage result = await httpClient.PutAsync($"{ApiBase}/personal/{personal.PersonalId}", content);
+
+            if (result.IsSuccessStatusCode)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
