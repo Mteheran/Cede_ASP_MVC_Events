@@ -14,9 +14,9 @@ namespace Cede_ASP_MVC_Events_Main.Controllers
     {
         public IPersonalService personalService { get; set; }
 
-        public PersonalController()
+        public PersonalController(IPersonalService service)
         {
-            personalService = new WebPersonalService();
+            personalService = service;
         }
 
         // GET: Personal
