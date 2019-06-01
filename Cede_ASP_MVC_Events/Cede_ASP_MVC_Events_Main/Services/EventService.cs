@@ -9,13 +9,9 @@ using System.Web;
 
 namespace Cede_ASP_MVC_Events_Main.Services
 {
-    public class EventService
+    public class EventService : BaseService
     {
-        const string ApiBase = "http://localhost:60469/api/";
-
-        public HttpClient httpClient { get; set; } = new HttpClient();
-
-        public async Task<List<Event>> GetPersonals()
+        public async Task<List<Event>> GetEvents()
         {
             var result = await httpClient.GetAsync($"{ApiBase}/event");
 

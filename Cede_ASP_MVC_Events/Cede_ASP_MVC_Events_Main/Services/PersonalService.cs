@@ -10,12 +10,8 @@ using System.Web;
 
 namespace Cede_ASP_MVC_Events_Main.Services
 {
-    public class PersonalService : IPersonalService
+    public class PersonalService : BaseService, IPersonalService
     {
-        const string ApiBase = "http://localhost:60469/api/";
-
-        public HttpClient httpClient { get; set; } = new HttpClient();
-
         public async Task<List<Personal>> GetPersonals()
         {
             var result = await httpClient.GetAsync($"{ApiBase}/personal");

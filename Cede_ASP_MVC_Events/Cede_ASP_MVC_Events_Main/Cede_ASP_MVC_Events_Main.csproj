@@ -129,6 +129,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonalController.cs" />
     <Compile Include="Global.asax.cs">
@@ -137,6 +138,7 @@
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Personal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\EventService.cs" />
     <Compile Include="Services\Interfaces\IPersonalService.cs" />
     <Compile Include="Services\PersonalService.cs" />
@@ -193,6 +195,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Personal\Index.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
