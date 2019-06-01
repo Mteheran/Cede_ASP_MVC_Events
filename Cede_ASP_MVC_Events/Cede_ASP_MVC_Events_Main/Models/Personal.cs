@@ -29,7 +29,5 @@ namespace Cede_ASP_MVC_Events_Main.Models
 
         [MaxLength(20)]
         public string Phone2 { get; set; }
-
-        //public virtual ICollection<Event> Events { get; set; }
     }
 }

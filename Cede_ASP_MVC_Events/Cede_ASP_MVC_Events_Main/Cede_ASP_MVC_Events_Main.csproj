@@ -134,9 +134,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Personal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\PersonalService.cs" />
+    <Compile Include="Services\EventService.cs" />
+    <Compile Include="Services\Interfaces\IPersonalService.cs" />
+    <Compile Include="Services\PersonalService.cs" />
+    <Compile Include="Services\WebServices\WebPersonalService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Connected Services\wsPersonalService\Cede_ASP_MVC_Events_Main.wsPersonalService.GetPersonalResponse.datasource">
@@ -192,7 +196,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="WebServices\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

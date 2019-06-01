@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Cede_ASP_API_Events_EF.Entities
+namespace Cede_ASP_MVC_Events_Main.Models
 {
     public class Event
     {
@@ -24,6 +23,5 @@ namespace Cede_ASP_API_Events_EF.Entities
         public DateTime DateCreated { get; set; } = DateTime.Now;
         public int Status { get; set; } = 1;
         public bool IsDeleted { get; set; } = false;
-        //public virtual Personal Personal { get; set; }
     }
 }
