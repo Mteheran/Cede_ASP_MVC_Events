@@ -10,5 +10,9 @@ namespace Cede_ASP_MVC_Events_Main.Services.Interfaces
     public interface IPersonalService
     {
         Task<List<Personal>> GetPersonals();
+
+        Task<Personal> GetPersonalbyId(string Id);
+
+        Task<bool> SavePersonal(Personal personal);
     }
 }
