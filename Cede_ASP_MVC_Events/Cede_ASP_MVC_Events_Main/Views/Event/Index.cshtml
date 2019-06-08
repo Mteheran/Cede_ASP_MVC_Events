@@ -4,14 +4,56 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<p>
+    @Html.ActionLink("Crear Nuevo Evento", "Create")
+</p>
 
-@foreach (var item in Model)
-{
-    <label>
-        @item.Name - @item.Description
-    </label>
-    <br />
-}
+<table class=" table">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Descripcion
+        </th>
+        <th>
+            Fecha del evento
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>
+           Evento privado
+        </th>
+        <th>
+        </th>
+    </tr>
 
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDate)
+            </td>
+            <td>
+                <label class="@Cede_ASP_MVC_Events_Main.Helpers.EventStatusHelper.GetStyleStatus(item.Status)">
+                @Cede_ASP_MVC_Events_Main.Helpers.EventStatusHelper.GetStatus(item.Status) </label>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPrivate)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.EventId }) |
+                @*@Html.ActionLink("Details", "Details", new { id = item.Id_Empleado }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id_Empleado })*@
+            </td>
+        </tr>
+    }
 
-
+</table>
