@@ -28,7 +28,9 @@ namespace Cede_ASP_API_Events_EF.Migrations
             context.Personal.AddOrUpdate(new Personal() { PersonalId = Guid.Parse("00000000-0000-0000-0000-000000000006"), Name = "Arturo", LastName = "Gomez" });
 
             context.Events.AddOrUpdate(new Event() { EventId = Guid.Parse("00000000-0000-0000-0000-000000000101"),  PersonalId = Guid.Parse("00000000-0000-0000-0000-000000000001"), Name = "Event 1", EventDate = new DateTime(2019,05,01)});
-            context.Events.AddOrUpdate(new Event() { EventId = Guid.Parse("00000000-0000-0000-0000-000000000102"), PersonalId = Guid.Parse("00000000-0000-0000-0000-000000000002"), Name = "Event 2", EventDate = new DateTime(2019, 04, 10) });            context.Events.AddOrUpdate(new Event() { EventId = Guid.Parse("00000000-0000-0000-0000-000000000103"), PersonalId = Guid.Parse("00000000-0000-0000-0000-000000000003"), Name = "Concierto", EventDate = new DateTime(2019, 12, 01) });            context.Events.AddOrUpdate(new Event() { EventId = Guid.Parse("00000000-0000-0000-0000-000000000104"), PersonalId = Guid.Parse("00000000-0000-0000-0000-000000000004"), Name = "partido", EventDate = new DateTime(2019, 10, 08) });
+            context.Events.AddOrUpdate(new Event() { EventId = Guid.Parse("00000000-0000-0000-0000-000000000102"), PersonalId = Guid.Parse("00000000-0000-0000-0000-000000000002"), Name = "Event 2", EventDate = new DateTime(2019, 04, 10) });
+            context.Events.AddOrUpdate(new Event() { EventId = Guid.Parse("00000000-0000-0000-0000-000000000103"), PersonalId = Guid.Parse("00000000-0000-0000-0000-000000000003"), Name = "Concierto", EventDate = new DateTime(2019, 12, 01) });
+            context.Events.AddOrUpdate(new Event() { EventId = Guid.Parse("00000000-0000-0000-0000-000000000104"), PersonalId = Guid.Parse("00000000-0000-0000-0000-000000000004"), Name = "partido", EventDate = new DateTime(2019, 10, 08) });
 
         }
     }
