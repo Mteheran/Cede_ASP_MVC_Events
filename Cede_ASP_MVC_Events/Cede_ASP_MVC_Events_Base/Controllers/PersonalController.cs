@@ -10,7 +10,7 @@ namespace Cede_ASP_MVC_Events_Base.Controllers
 {
     public class PersonalController : Controller
     {
-        // GET: Personal
+        // GET: Personal                                                                                                                                                  
         public ActionResult Index()
         {
             var personaldata = PersonalData.GetPersonals(); 
