@@ -10,5 +10,9 @@ namespace Cede_ASP_MVC_Events_Main.Services.Interfaces
     public interface IEventService
     {
         Task<List<Event>> GetEvents();
+
+        Task<Event> GetEventById(string Id);
+
+        Task<bool> SaveEvent(Event objEvent);
     }
 }
