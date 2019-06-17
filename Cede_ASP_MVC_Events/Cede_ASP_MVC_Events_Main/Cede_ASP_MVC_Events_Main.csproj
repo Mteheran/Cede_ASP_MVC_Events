@@ -147,6 +147,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\EventStatusHelper.cs" />
+    <Compile Include="Helpers\IsPrivateHelper.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Personal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

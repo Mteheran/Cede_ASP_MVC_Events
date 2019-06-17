@@ -46,7 +46,8 @@
                 @Cede_ASP_MVC_Events_Main.Helpers.EventStatusHelper.GetStatus(item.Status) </label>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsPrivate)
+                @Cede_ASP_MVC_Events_Main.Helpers.IsPrivateHelper.GetStatus(item.IsPrivate)
+                @*@Html.DisplayFor(modelItem => item.IsPrivate)*@
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.EventId }) |
