@@ -13,6 +13,11 @@ namespace Cede_ASP_MVC_Events_Main.Controllers
             return View();
         }
 
+        public ActionResult InfoSystem()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
