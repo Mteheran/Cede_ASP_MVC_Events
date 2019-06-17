@@ -54,5 +54,20 @@ namespace Cede_ASP_MVC_Events_Main.Services
 
             return false;
         }
+
+
+        public async Task<bool> DeletePersonal(string Id)
+        {
+            string bodyRequest = JsonConvert.SerializeObject(Id);
+
+            HttpResponseMessage result = await httpClient.DeleteAsync($"{ApiBase}/personal/{Id}");
+
+            if (result.IsSuccessStatusCode)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

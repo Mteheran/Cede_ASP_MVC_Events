@@ -8,6 +8,8 @@
     @Html.ActionLink("Crear Nuevo Personal", "Create")
 </p>
 
+@Html.ValidationSummary()
+
 <table class=" table">
     <tr>
         <th>
@@ -49,6 +51,7 @@
             </td>
             <td>
                 @Html.ActionLink("Editar", "Edit", new { id = item.PersonalId }) |
+                <button onclick="confirmDelete('@item.PersonalId')">Eliminar</button>
                 @*@Html.ActionLink("Details", "Details", new { id = item.Id_Empleado }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.Id_Empleado })*@
             </td>
@@ -56,4 +59,19 @@
     }
 
 </table>
+@section Scripts {
+    <script>
+        function confirmDelete(id) {
+            var result = confirm("¿Esta seguro que desea eliminar el registro?");
 
+            if (result) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Personal/Delete/" + id,
+                    data: '{id:"00000000-0000 - 0000 - 0000 - 000000000001"}',
+                    success: location.reload(),
+                });
+            }
+        }
+    </script>
+}

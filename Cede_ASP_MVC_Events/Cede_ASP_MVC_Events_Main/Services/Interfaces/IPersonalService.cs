@@ -14,5 +14,7 @@ namespace Cede_ASP_MVC_Events_Main.Services.Interfaces
         Task<Personal> GetPersonalbyId(string Id);
 
         Task<bool> SavePersonal(Personal personal);
+
+        Task<bool> DeletePersonal(string Id);
     }
 }

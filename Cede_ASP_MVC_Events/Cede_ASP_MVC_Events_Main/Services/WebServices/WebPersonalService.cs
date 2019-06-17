@@ -41,5 +41,10 @@ namespace Cede_ASP_MVC_Events_Main.Services.WebServices
         {
             return false;
         }
+
+        public Task<bool> DeletePersonal(string Id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

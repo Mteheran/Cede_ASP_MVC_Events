@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace Cede_ASP_MVC_Events_Main.Controllers
 {
+    [HandleError]
     public class EventController : Controller
     {
         public IEventService eventService { get; set; }
@@ -27,6 +28,16 @@ namespace Cede_ASP_MVC_Events_Main.Controllers
             var eventList = await eventService.GetEvents();
 
             return View(eventList);
+        }
+
+        [ActionName("EventList")]
+        public async Task<ActionResult> EventList()
+        {
+            throw new System.Exception();
+
+            var personalList = await personalService.GetPersonals();
+
+            return View("Index", personalList);
         }
 
         public async Task<ActionResult> Edit(string Id)
